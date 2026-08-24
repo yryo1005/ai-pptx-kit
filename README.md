@@ -9,7 +9,7 @@
 
 | ファイル名 | 内容 |
 | :--- | :--- |
-| `templates/reserch.pptx` | 研究結果を発表する際のスライド |
+| `templates/research.pptx` | 研究結果を発表する際のスライド |
 | `templates/business.pptx` | ビジネスの提案や報告のスライド |
 
 ---
@@ -21,10 +21,10 @@
 
 | ファイル名 | 内容 |
 | :--- | :--- |
-| `samples/reserch/ja_slide_01.pptx` | 最適化手法についてのスライド(15分) |
-| `samples/reserch/ja_slide_02.pptx` | 大喜利判定AIについてのスライド(12分) |
-| `samples/reserch/ja_slide_03.pptx` | 大喜利生成AIについてのスライド(15分) |
-| `samples/reserch/ja_slide_04.pptx` | ディープフェイクを用いた匿名化についてのスライド(10分) |
+| `samples/research/ja_slide_01.pptx` | 最適化手法についてのスライド(15分) |
+| `samples/research/ja_slide_02.pptx` | 大喜利判定AIについてのスライド(12分) |
+| `samples/research/ja_slide_03.pptx` | 大喜利生成AIについてのスライド(15分) |
+| `samples/research/ja_slide_04.pptx` | ディープフェイクを用いた匿名化についてのスライド(10分) |
 | `samples/business/事業計画書.pptx` | 会社の事業計画書 |
 
 ---
