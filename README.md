@@ -85,3 +85,6 @@ pptxファイルの作成後LibreOfficeを用いてPDF化しスタイルを確�
 
 # 参考資料
 `@.ai/ai-dev-kit/documentation.md` に書かれた文章の規約に従い，文章を記述する
+
+# スライド構成
+スライドを作成する際は，過去のユーザーの指示 `@.orders/` や，AIエディタが作成したプログラム `@programs/` とレポート `@.reports/` ，プログラムの出力 `@outputs`を参考にする．
