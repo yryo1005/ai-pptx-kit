@@ -81,20 +81,23 @@ f(\mathbf{x}) =
 pptxファイルの生成および編集にLibreOfficeを使用しない．
 PowerPoint互換のOOXMLを直接生成・編集する．
 
-pptxファイルの作成後，`@.ai/ai-pptx-kit/scripts/convert_to_pdf.sh <pptxのパス>`を実行してPDF化し，
-スタイルを確認する．
+pptxファイルの作成後，`@.ai/ai-pptx-kit/pptx-render` を用いてPDF化し，スタイルを確認する．
 
-## PPTX→PDF変換の方式
-- LibreOfficeによるPDF変換では，OMML（PowerPointネイティブの数式オブジェクト）等が正しく
-  レンダリングされず，数式・記号が消失する場合がある．
-- 実行環境がWSLであり，かつWindows側にPowerPointが実際にインストールされている場合，
-  `convert_to_pdf.sh`は自動的にPowerPoint本体のCOMオートメーション（`convert_to_pdf.ps1`）を
-  用いてPDFを生成する．編集時と同じ見た目でレンダリングされるため，こちらを優先する．
-- WSLでない場合，PowerPointが利用できない場合，またはPowerPoint経由の変換が失敗した場合は，
-  LibreOfficeへ自動的にフォールバックする．この場合，標準エラー出力にその旨が表示されるため，
-  生成されたPDFに数式・記号の消失や文字化けがないか，必ず目視で確認すること．
-- `convert_to_pdf.sh`を直接実行できない環境（Windows側のPowerShell実行自体が失敗する等）では，
-  スクリプトが自動的にLibreOfficeへフォールバックするため，個別に判定作業を行う必要はない．
+## pptx-renderのセットアップと実行
+
+セットアップ(初回のみ)
+```bash
+git submodule add https://github.com/yryo1005/pptx-render.git .ai/ai-pptx-kit/pptx-render
+uv venv .ai/ai-pptx-kit/pptx-render/.venv_render --python 3.10
+uv pip install --python .ai/ai-pptx-kit/pptx-render/.venv_render/bin/python -r .ai/ai-pptx-kit/pptx-render/requirements_render.txt
+```
+
+レンダリングの実行
+```bash
+export PYTHONPATH=.ai/ai-pptx-kit/pptx-render/programs
+.ai/ai-pptx-kit/pptx-render/.venv_render/bin/python -m pptx_renderer.cli input.pptx -o output.pdf
+```
+詳細は `@.ai/ai-pptx-kit/pptx-render/README.md` を参考にしてください．
 
 # 参考資料
 `@.ai/ai-dev-kit/documentation.md` に書かれた文章の規約に従い，文章を記述する
