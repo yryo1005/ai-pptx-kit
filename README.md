@@ -80,24 +80,23 @@ f(\mathbf{x}) =
 # スタイルチェック
 pptxファイルの生成および編集にLibreOfficeを使用しない．
 PowerPoint互換のOOXMLを直接生成・編集する．
-
-pptxファイルの作成後，`@.ai/ai-pptx-kit/pptx-render` を用いてPDF化し，スタイルを確認する．
+pptxファイルの作成後，`@.ai/pptx-render` を用いてPDF化し，スタイルを確認する．
 
 ## pptx-renderのセットアップと実行
 
 セットアップ(初回のみ)
 ```bash
-git submodule add https://github.com/yryo1005/pptx-render.git .ai/ai-pptx-kit/pptx-render
-uv venv .ai/ai-pptx-kit/pptx-render/.venv_render --python 3.10
-uv pip install --python .ai/ai-pptx-kit/pptx-render/.venv_render/bin/python -r .ai/ai-pptx-kit/pptx-render/requirements_render.txt
+git submodule add https://github.com/yryo1005/pptx-render.git .aipptx-render
+uv venv .ai/pptx-render/.venv_render --python 3.10
+uv pip install --python .ai/pptx-render/.venv_render/bin/python -r .ai/pptx-render/requirements_render.txt
 ```
 
 レンダリングの実行
 ```bash
-export PYTHONPATH=.ai/ai-pptx-kit/pptx-render/programs
-.ai/ai-pptx-kit/pptx-render/.venv_render/bin/python -m pptx_renderer.cli input.pptx -o output.pdf
+export PYTHONPATH=.ai/pptx-render/programs
+.ai/pptx-render/.venv_render/bin/python -m pptx_renderer.cli input.pptx -o output.pdf
 ```
-詳細は `@.ai/ai-pptx-kit/pptx-render/README.md` を参考にしてください．
+詳細は `@.ai/pptx-render/README.md` を参考にしてください．
 
 # 参考資料
 `@.ai/ai-dev-kit/documentation.md` に書かれた文章の規約に従い，文章を記述する
